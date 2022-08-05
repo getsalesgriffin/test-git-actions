@@ -30,3 +30,10 @@ jobs:
       - name: Dump GitHub context
         id: github_context_step
         run: echo '${{ toJSON(github) }}'
+        
+      - name: update-pull-request
+        uses: kt3k/update-pr-description@v1.0.1
+        with:
+          pr_body: ${{ github }}
+          destination_branch: release
+          github_token: ${{ secrets.GITHUB_TOKEN }}
