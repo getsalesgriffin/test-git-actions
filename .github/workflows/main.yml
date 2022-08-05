@@ -4,8 +4,9 @@ name: CI
 
 # Controls when the workflow will run
 on:
-  # Triggers the workflow on pull request events but only for the "main" branch
+  # Triggers the workflow on pull request events but only for the "main" branch and only when opened/reopened
   pull_request:
+    types: [opened, reopened]
     branches: [ "main" ]
 
   # Allows you to run this workflow manually from the Actions tab
